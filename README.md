@@ -73,6 +73,10 @@ The entire process is contained within the `finetune_llama_for_code_generation.i
 
 **Note:** This notebook is designed to be run in an environment with a GPU (e.g., Google Colab with a T4 GPU runtime).
 
+### Speed-Up Knobs (Optional)
+
+If you want faster iterations in Colab, toggle the `QUICK_RUN` flag in the data preparation cell. It reduces the train/validation sample counts and shortens the training run. You can also adjust `TRAIN_SAMPLES`, `VAL_SAMPLES`, and `SHUFFLE_BUFFER` to trade off speed and data coverage. The training cell additionally enables sequence packing with `max_seq_length=1024` to improve throughput for short examples.
+
 ## Notebook Structure
 
 The notebook is organized into the following sections:
